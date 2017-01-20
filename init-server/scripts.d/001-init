@@ -1,0 +1,60 @@
+#!/bin/sh
+
+
+echo "Populating LDAP tree with root records"
+
+cat <<EOF | ldapmodify -Y EXTERNAL -H ldapi:///
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+add: olcAccess
+olcAccess: {0}to attrs=userPassword
+  by self write
+  by anonymous auth
+  by * none
+olcAccess: {1}to *
+  by dn.exact=gidNumber=0+uidNumber=0,cn=peercred,cn=external,cn=auth manage
+  by anonymous auth
+  by users read
+  by * none
+EOF
+
+# create top organization DC object
+cat <<EOF | ldapadd -Y EXTERNAL -H ldapi:///
+dn: $SLAPD_DOMAIN_DC_FORMAT
+objectClass: organization
+objectClass: dcObject
+objectClass: top
+dc: $SLAPD_DOMAIN_NAME
+description: $SLAPD_DOMAIN_NAME
+o: $SLAPD_ORGANIZATION
+EOF
+
+# cn=admin user for managing the primary DB
+cat <<EOF| ldapadd -Y EXTERNAL -H ldapi:///
+dn: cn=admin,$SLAPD_DOMAIN_DC_FORMAT
+objectClass: organizationalRole
+objectClass: simpleSecurityObject
+cn: admin
+userPassword: $SLAPD_PASSWORD_HASH
+description: LDAP administrator
+EOF
+
+cat <<EOF | ldapmodify -H ldapi:/// -Y EXTERNAL
+dn: olcDatabase={0}config,cn=config
+changetype: modify
+replace: olcRootDN
+olcRootDN: cn=admin,cn=config
+-
+replace: olcRootPW
+olcRootPW: $SLAPD_PASSWORD_HASH
+EOF
+
+cat <<EOF | ldapmodify -H ldapi:/// -Y EXTERNAL
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+replace: olcRootDN
+olcRootDN: cn=admin,$SLAPD_DOMAIN_DC_FORMAT
+-
+replace: olcRootPW
+olcRootPW: $SLAPD_PASSWORD_HASH
+EOF

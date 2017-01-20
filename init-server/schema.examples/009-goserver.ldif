@@ -1,0 +1,305 @@
+dn: cn=goserver,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: goserver
+olcAttributeTypes: {0}( 1.3.6.1.4.1.10098.1.1.9.1 NAME 'goXdmcpIsEnabled' DE
+ SC 'Indicates if the server is enabled for XDMCP queries' EQUALITY caseExac
+ tIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.10098.1.1.9.2 NAME 'goFontPath' DESC 'Fo
+ ntserver Entry' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.10098.1.1.9.4 NAME 'goExportEntry' DESC 
+ 'Provides an export entry' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.15 )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.10098.1.1.9.9 NAME 'goSyslogSection' DES
+ C 'What sections wants the server for its syslog service? i.e. *.*' EQUALIT
+ Y caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.10098.1.1.9.10 NAME 'goTimeSource' DESC 
+ 'List of time sources' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 )
+olcAttributeTypes: {5}( 1.3.6.1.4.1.10098.1.1.9.11 NAME 'goSpoolPath' DESC '
+ Provides a spool path for printing services' EQUALITY caseExactIA5Match SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {6}( 1.3.6.1.4.1.10098.1.1.9.12 NAME 'goLdapBase' DESC 'B
+ ase to use for this LDAP server' EQUALITY caseExactMatch SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {7}( 1.3.6.1.4.1.10098.1.1.9.13 NAME 'goImapName' DESC 'N
+ ame of IMAP server appearing in GOsa' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {8}( 1.3.6.1.4.1.10098.1.1.9.14 NAME 'goImapConnect' DESC
+  'PHP connect string for IMAP server' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {9}( 1.3.6.1.4.1.10098.1.1.9.15 NAME 'goImapAdmin' DESC '
+ IMAP admin account' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {10}( 1.3.6.1.4.1.10098.1.1.9.16 NAME 'goImapPassword' DE
+ SC 'IMAP admin password' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466
+ .115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {11}( 1.3.6.1.4.1.10098.1.1.9.17 NAME 'goImapSieveServer'
+  DESC 'Cyrus sieve server address or name' EQUALITY caseExactIA5Match SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {12}( 1.3.6.1.4.1.10098.1.1.9.18 NAME 'goImapSievePort' D
+ ESC 'Cyrus sieve server port' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {13}( 1.3.6.1.4.1.10098.1.1.9.19 NAME 'goKrbRealm' DESC '
+ Default Kerberos realm to use for this server' EQUALITY caseExactIA5Match S
+ YNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {14}( 1.3.6.1.4.1.10098.1.1.9.20 NAME 'goKrbAdmin' DESC '
+ Admin principal for kerberos server' EQUALITY caseExactIA5Match SYNTAX 1.3.
+ 6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {15}( 1.3.6.1.4.1.10098.1.1.9.21 NAME 'goKrbPassword' DES
+ C 'Admin password for kerberos server' EQUALITY caseExactIA5Match SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {16}( 1.3.6.1.4.1.10098.1.1.9.22 NAME 'goFaxAdmin' DESC '
+ Admin principal for fax server' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {17}( 1.3.6.1.4.1.10098.1.1.9.23 NAME 'goFaxPassword' DES
+ C 'Admin password for fax server' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {18}( 1.3.6.1.4.1.10098.1.1.9.83 NAME 'gosaLogDB' DESC 'G
+ Osa logging DB name' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115
+ .121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {19}( 1.3.6.1.4.1.10098.1.1.9.24 NAME 'goLogAdmin' DESC '
+ Admin principal for log server' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {20}( 1.3.6.1.4.1.10098.1.1.9.25 NAME 'goLogPassword' DES
+ C 'Admin password for log server' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {21}( 1.3.6.1.4.1.10098.1.1.9.26 NAME 'goFonAdmin' DESC '
+ Admin principal for fon server' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {22}( 1.3.6.1.4.1.10098.1.1.9.27 NAME 'goFonPassword' DES
+ C 'Admin password for fon server' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {23}( 1.3.6.1.4.1.10098.1.1.9.28 NAME 'goFonAreaCode' DES
+ C 'Store area code' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {24}( 1.3.6.1.4.1.10098.1.1.9.29 NAME 'goFonCountryCode' 
+ DESC 'Store country code' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {25}( 1.3.6.1.4.1.10098.1.1.9.30 NAME 'goGlpiAdmin' DESC 
+ 'Admin principal for glpi database server' EQUALITY caseExactIA5Match SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {26}( 1.3.6.1.4.1.10098.1.1.9.31 NAME 'goGlpiPassword' DE
+ SC 'Admin password for glpi database server' EQUALITY caseExactIA5Match SYN
+ TAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {27}( 1.3.6.1.4.1.10098.1.1.9.32 NAME 'goGlpiDatabase' DE
+ SC 'Database name for glpi extension' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {28}( 1.3.6.1.4.1.10098.1.1.9.33 NAME 'goTerminalServerSt
+ atus' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA
+ 5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {29}( 1.3.6.1.4.1.10098.1.1.9.34 NAME 'goNfsServerStatus'
+  DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Matc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {30}( 1.3.6.1.4.1.10098.1.1.9.35 NAME 'goNtpServerStatus'
+  DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Matc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {31}( 1.3.6.1.4.1.10098.1.1.9.36 NAME 'goSyslogServerStat
+ us' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5M
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {32}( 1.3.6.1.4.1.10098.1.1.9.37 NAME 'goLdapServerStatus
+ ' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Mat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {33}( 1.3.6.1.4.1.10098.1.1.9.38 NAME 'goImapServerStatus
+ ' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Mat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {34}( 1.3.6.1.4.1.10098.1.1.9.39 NAME 'goKrbServerStatus'
+  DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Matc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {35}( 1.3.6.1.4.1.10098.1.1.9.40 NAME 'goFaxServerStatus'
+  DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Matc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {36}( 1.3.6.1.4.1.10098.1.1.9.41 NAME 'goLogDBServerStatu
+ s' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Ma
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {37}( 1.3.6.1.4.1.10098.1.1.9.42 NAME 'goFonServerStatus'
+  DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Matc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {38}( 1.3.6.1.4.1.10098.1.1.9.43 NAME 'goShareServerStatu
+ s' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Ma
+ tch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {39}( 1.3.6.1.4.1.10098.1.1.9.44 NAME 'goMailServerStatus
+ ' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Mat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {40}( 1.3.6.1.4.1.10098.1.1.9.45 NAME 'goGlpiServerStatus
+ ' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Mat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {41}( 1.3.6.1.4.1.10098.1.1.9.46 NAME 'postfixHeaderSizeL
+ imit' DESC 'Keep postfix header-size-limit variable' EQUALITY caseExactIA5M
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {42}( 1.3.6.1.4.1.10098.1.1.9.47 NAME 'postfixMailboxSize
+ Limit' DESC 'Keep postfix mailbox-size-limit variable' EQUALITY caseExactIA
+ 5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {43}( 1.3.6.1.4.1.10098.1.1.9.48 NAME 'postfixMessageSize
+ Limit' DESC 'Keep postfix message-size-limit variable' EQUALITY caseExactIA
+ 5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {44}( 1.3.6.1.4.1.10098.1.1.9.49 NAME 'postfixMyDestinati
+ ons' DESC 'Keep postfix mydestinations variable' EQUALITY caseExactIA5Match
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {45}( 1.3.6.1.4.1.10098.1.1.9.50 NAME 'postfixMyDomain' D
+ ESC 'Keep postfix mydomain variable' EQUALITY caseExactIA5Match SYNTAX 1.3.
+ 6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {46}( 1.3.6.1.4.1.10098.1.1.9.51 NAME 'postfixMyHostname'
+  DESC 'Keep postfix myhostname variable' EQUALITY caseExactIA5Match SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {47}( 1.3.6.1.4.1.10098.1.1.9.52 NAME 'postfixMyNetworks'
+  DESC 'Keep postfix mynetworks variable' EQUALITY caseExactIA5Match SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {48}( 1.3.6.1.4.1.10098.1.1.9.53 NAME 'postfixRelayhost' 
+ DESC 'Keep postfix relayhost variable' EQUALITY caseExactIA5Match SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {49}( 1.3.6.1.4.1.10098.1.1.9.54 NAME 'postfixTransportTa
+ ble' DESC 'Keep postfix transport tables' EQUALITY caseExactIA5Match SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {50}( 1.3.6.1.4.1.10098.1.1.9.55 NAME 'postfixSenderRestr
+ ictions' DESC 'Keep postfix sender restrictions' EQUALITY caseExactIA5Match
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {51}( 1.3.6.1.4.1.10098.1.1.9.56 NAME 'postfixRecipientRe
+ strictions' DESC 'Keep postfix transport tables' EQUALITY caseExactIA5Match
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {52}( 1.3.6.1.4.1.10098.1.1.9.57 NAME 'cyrusImap' DESC 'S
+ tart IMAP service? true/false' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {53}( 1.3.6.1.4.1.10098.1.1.9.58 NAME 'cyrusImapSSL' DESC
+  'Start IMAP SSL service? true/false' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {54}( 1.3.6.1.4.1.10098.1.1.9.59 NAME 'cyrusPop3' DESC 'S
+ tart POP3 service? true/false' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.
+ 1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {55}( 1.3.6.1.4.1.10098.1.1.9.60 NAME 'cyrusPop3SSL' DESC
+  'Start POP3 SSL service? true/false' EQUALITY caseExactIA5Match SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {56}( 1.3.6.1.4.1.10098.1.1.9.61 NAME 'goCupsServerStatus
+ ' DESC 'Server status container - on / off / fail' EQUALITY caseExactIA5Mat
+ ch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {57}( 1.3.6.1.4.1.10098.1.1.9.62 NAME 'saRewriteHeader' D
+ ESC 'Text to place in front of mail subjects' EQUALITY caseExactIA5Match SY
+ NTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {58}( 1.3.6.1.4.1.10098.1.1.9.63 NAME 'saTrustedNetworks'
+  DESC 'List of trusted networks' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.26 )
+olcAttributeTypes: {59}( 1.3.6.1.4.1.10098.1.1.9.64 NAME 'saRequiredScore' D
+ ESC 'Required score to tag a mail as SPAM' EQUALITY integerMatch SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {60}( 1.3.6.1.4.1.10098.1.1.9.65 NAME 'saFlags' DESC 'Fla
+ gs for spamassassin' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115
+ .121.1.26 )
+olcAttributeTypes: {61}( 1.3.6.1.4.1.10098.1.1.9.66 NAME 'saRule' DESC 'Base
+ 64 encoded rule text for spamassassin' EQUALITY caseExactIA5Match SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {62}( 1.3.6.1.4.1.10098.1.1.9.67 NAME 'saStatus' DESC 'Se
+ rver status container - on / off / fail' EQUALITY caseExactIA5Match SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {63}( 1.3.6.1.4.1.10098.1.1.9.68 NAME 'avMaxThreads' DESC
+  'Number of AV scanning threads' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {64}( 1.3.6.1.4.1.10098.1.1.9.69 NAME 'avMaxDirectoryRecu
+ rsions' DESC 'Number of recursions done with directories' EQUALITY integerM
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {65}( 1.3.6.1.4.1.10098.1.1.9.70 NAME 'avUser' DESC 'User
+ name to run with' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {66}( 1.3.6.1.4.1.10098.1.1.9.71 NAME 'avFlags' DESC 'Spe
+ cial flags for the scan engine' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {67}( 1.3.6.1.4.1.10098.1.1.9.72 NAME 'avArchiveMaxFileSi
+ ze' DESC 'Maximum archive file size' EQUALITY integerMatch SYNTAX 1.3.6.1.4
+ .1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {68}( 1.3.6.1.4.1.10098.1.1.9.73 NAME 'avArchiveMaxRecurs
+ ion' DESC 'Maximum number of archive nestings' EQUALITY integerMatch SYNTAX
+  1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {69}( 1.3.6.1.4.1.10098.1.1.9.74 NAME 'avArchiveMaxCompre
+ ssionRatio' DESC 'Maximum compression ratio' EQUALITY integerMatch SYNTAX 1
+ .3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {70}( 1.3.6.1.4.1.10098.1.1.9.75 NAME 'avDatabaseMirror' 
+ DESC 'Where to find updates' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {71}( 1.3.6.1.4.1.10098.1.1.9.76 NAME 'avHttpProxyURL' DE
+ SC 'How to get the updates' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1
+ 466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {72}( 1.3.6.1.4.1.10098.1.1.9.77 NAME 'avStatus' DESC 'Se
+ rver status container - on / off / fail' EQUALITY caseExactIA5Match SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {73}( 1.3.6.1.4.1.10098.1.1.9.78 NAME 'avChecksPerDay' DE
+ SC 'Update checks per day' EQUALITY integerMatch SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.27 SINGLE-VALUE )
+olcAttributeTypes: {74}( 1.3.6.1.4.1.10098.1.1.9.79 NAME 'goLogDB' DESC 'Nam
+ e of logging DB' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.26 SINGLE-VALUE )
+olcAttributeTypes: {75}( 1.3.6.1.4.1.10098.1.1.9.80 NAME 'goLogDBUser' DESC 
+ 'Auth user for logging DB' EQUALITY caseExactIA5Match SYNTAX 1.3.6.1.4.1.14
+ 66.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {76}( 1.3.6.1.4.1.10098.1.1.9.81 NAME 'goLogDBPassword' D
+ ESC 'Password for logging DB user' EQUALITY caseExactIA5Match SYNTAX 1.3.6.
+ 1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {77}( 1.3.6.1.4.1.10098.1.1.9.82 NAME 'gotoSessionType' D
+ ESC 'Supported type for a terminal server' EQUALITY caseExactIA5Match SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.26 )
+olcObjectClasses: {0}( 1.3.6.1.4.1.10098.1.2.1.16 NAME 'goTerminalServer' DE
+ SC 'Terminal server description (v2.7)' SUP top AUXILIARY MUST ( cn $ goXdm
+ cpIsEnabled ) MAY ( description $ goTerminalServerStatus $ gotoSessionType 
+ $ goFontPath ) )
+olcObjectClasses: {1}( 1.3.6.1.4.1.10098.1.2.1.19 NAME 'goNfsServer' DESC 'N
+ FS server description (v2.7)' SUP top AUXILIARY MUST cn MAY ( goExportEntry
+  $ description $ goNfsServerStatus ) )
+olcObjectClasses: {2}( 1.3.6.1.4.1.10098.1.2.1.20 NAME 'goNtpServer' DESC 'T
+ ime server description (v2.7)' SUP top AUXILIARY MUST cn MAY ( goTimeSource
+  $ description $ goNtpServerStatus ) )
+olcObjectClasses: {3}( 1.3.6.1.4.1.10098.1.2.1.21 NAME 'goSyslogServer' DESC
+  'Syslog server description (v2.7)' SUP top AUXILIARY MUST cn MAY ( goSyslo
+ gSection $ description $ goSyslogServerStatus ) )
+olcObjectClasses: {4}( 1.3.6.1.4.1.10098.1.2.1.22 NAME 'goLdapServer' DESC '
+ LDAP server description (v2.7)' SUP top AUXILIARY MUST cn MAY ( goLdapBase 
+ $ description $ goLdapServerStatus ) )
+olcObjectClasses: {5}( 1.3.6.1.4.1.10098.1.2.1.23 NAME 'goCupsServer' DESC '
+ CUPS server description (v2.7)' SUP top AUXILIARY MUST cn MAY ( description
+  $ goCupsServerStatus ) )
+olcObjectClasses: {6}( 1.3.6.1.4.1.10098.1.2.1.24 NAME 'goImapServer' DESC '
+ IMAP server description (v2.7)' SUP top AUXILIARY MUST ( cn $ goImapName $ 
+ goImapConnect $ goImapAdmin $ goImapPassword ) MAY ( goImapSieveServer $ go
+ ImapSievePort $ description $ goImapServerStatus $ cyrusImap $ cyrusImapSSL
+  $ cyrusPop3 $ cyrusPop3SSL ) )
+olcObjectClasses: {7}( 1.3.6.1.4.1.10098.1.2.1.25 NAME 'goKrbServer' DESC 'K
+ erberos server description (v2.7)' SUP top AUXILIARY MUST ( cn $ goKrbRealm
+  ) MAY ( description $ goKrbServerStatus ) )
+olcObjectClasses: {8}( 1.3.6.1.4.1.10098.1.2.1.26 NAME 'goFaxServer' DESC 'F
+ ax server description (v2.7)' SUP top AUXILIARY MUST ( cn $ goFaxAdmin $ go
+ FaxPassword ) MAY ( description $ goFaxServerStatus ) )
+olcObjectClasses: {9}( 1.3.6.1.4.1.10098.1.2.1.27 NAME 'goServer' DESC 'Serv
+ er description (v2.7)' SUP top AUXILIARY MUST cn MAY ( description $ macAdd
+ ress $ ipHostNumber ) )
+olcObjectClasses: {10}( 1.3.6.1.4.1.10098.1.2.1.28 NAME 'goLogDBServer' DESC
+  'Log DB server description (v2.7)' SUP top AUXILIARY MUST ( cn $ gosaLogDB
+  $ goLogAdmin $ goLogPassword ) MAY goLogDBServerStatus )
+olcObjectClasses: {11}( 1.3.6.1.4.1.10098.1.2.1.29 NAME 'goFonServer' DESC '
+ Fon server description (v2.7)' SUP top AUXILIARY MUST ( cn $ goFonAdmin $ g
+ oFonPassword $ goFonAreaCode $ goFonCountryCode ) MAY ( description $ goFon
+ ServerStatus ) )
+olcObjectClasses: {12}( 1.3.6.1.4.1.10098.1.2.1.33 NAME 'goShareServer' DESC
+  'Share server description (v2.7)' SUP top AUXILIARY MUST cn MAY ( descript
+ ion $ goExportEntry $ goShareServerStatus ) )
+olcObjectClasses: {13}( 1.3.6.1.4.1.10098.1.2.1.36 NAME 'goMailServer' DESC 
+ 'Mail server definition (v2.7)' SUP top AUXILIARY MUST cn MAY ( description
+  $ goMailServerStatus $ postfixHeaderSizeLimit $ postfixMailboxSizeLimit $ 
+ postfixMessageSizeLimit $ postfixMydestinations $ postfixMydomain $ postfix
+ Myhostname $ postfixMynetworks $ postfixRelayhost $ postfixTransportTable $
+  postfixSenderRestrictions $ postfixRecipientRestrictions ) )
+olcObjectClasses: {14}( 1.3.6.1.4.1.10098.1.2.1.37 NAME 'goGlpiServer' DESC 
+ 'Glpi server definition (v2.7)' SUP top AUXILIARY MUST ( cn $ goGlpiAdmin $
+  goGlpiDatabase ) MAY ( description $ goGlpiPassword $ goGlpiServerStatus )
+  )
+olcObjectClasses: {15}( 1.3.6.1.4.1.10098.1.2.1.38 NAME 'goSpamServer' DESC 
+ 'Spam server definition (v2.7)' SUP top AUXILIARY MUST cn MAY ( saRewriteHe
+ ader $ saTrustedNetworks $ saRequiredScore $ saFlags $ saRule $ saStatus ) 
+ )
+olcObjectClasses: {16}( 1.3.6.1.4.1.10098.1.2.1.39 NAME 'goVirusServer' DESC
+  'Virus server definition (v2.7)' SUP top AUXILIARY MUST cn MAY ( avMaxThre
+ ads $ avMaxDirectoryRecursions $ avUser $ avFlags $ avArchiveMaxFileSize $ 
+ avArchiveMaxRecursion $ avArchiveMaxCompressionRatio $ avDatabaseMirror $ a
+ vChecksPerDay $ avHttpProxyURL $ avStatus ) )
+olcObjectClasses: {17}( 1.3.6.1.4.1.10098.1.2.1.40 NAME 'gosaLogServer' DESC
+  'GOsa log server (v2.7)' SUP top AUXILIARY MUST ( cn $ goLogDB $ goLogDBUs
+ er $ goLogDBPassword ) )
+olcObjectClasses: {18}( 1.3.6.1.4.1.10098.1.2.1.41 NAME 'goEnvironmentServer
+ ' DESC 'Environment server definition (v2.7)' SUP top AUXILIARY MUST cn MAY
+  gotoKioskProfile )

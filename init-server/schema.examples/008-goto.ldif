@@ -1,0 +1,95 @@
+dn: cn=goto,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: goto
+olcAttributeTypes: {0}( 1.3.6.1.4.1.10098.1.1.11.6 NAME 'gotoPrinterPPD' DES
+ C 'GOto - Gonicus Terminal Concept, PPD data' EQUALITY caseIgnoreIA5Match S
+ UBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SIN
+ GLE-VALUE )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.10098.1.1.11.7 NAME 'gotoProfileFlags' D
+ ESC 'GOto - Flags for Profile handling - C is for caching' EQUALITY caseIgn
+ oreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115
+ .121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.10098.1.1.11.8 NAME 'gotoProfileServer' 
+ DESC 'GOto - specifies the profile server' EQUALITY caseIgnoreIA5Match SUBS
+ TR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE
+ -VALUE )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.10098.1.1.11.9 NAME 'gotoShare' DESC 'GO
+ to - specifies a share' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5Sub
+ stringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.10098.1.1.11.10 NAME 'gotoLogonScript' D
+ ESC 'GOto - specifies a LogonScript' EQUALITY caseIgnoreMatch SUBSTR caseIg
+ noreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {5}( 1.3.6.1.4.1.10098.1.1.11.11 NAME 'gotoKioskProfile' 
+ DESC 'GOto - specifies a kiosk profile' EQUALITY caseIgnoreIA5Match SUBSTR 
+ caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {6}( 1.3.6.1.4.1.10098.1.1.11.12 NAME 'gotoUserPrinter' D
+ ESC 'GOto - keeps printers shown for this user' EQUALITY caseIgnoreIA5Match
+  SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {7}( 1.3.6.1.4.1.10098.1.1.11.13 NAME 'gotoUserAdminPrint
+ er' DESC 'GOto - keeps printers we are admin for' EQUALITY caseIgnoreIA5Mat
+ ch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  )
+olcAttributeTypes: {8}( 1.3.6.1.4.1.10098.1.1.11.16 NAME 'gotoGroupPrinter' 
+ DESC 'GOto - keeps printers shown for this user' EQUALITY caseIgnoreIA5Matc
+ h SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 
+ )
+olcAttributeTypes: {9}( 1.3.6.1.4.1.10098.1.1.11.17 NAME 'gotoGroupAdminPrin
+ ter' DESC 'GOto - keeps printers we are admin for' EQUALITY caseIgnoreIA5Ma
+ tch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.2
+ 6 )
+olcAttributeTypes: {10}( 1.3.6.1.4.1.10098.1.1.11.14 NAME 'gotoHotplugDevice
+ ' DESC 'GOto - keeps hotplug devices' EQUALITY caseIgnoreIA5Match SUBSTR ca
+ seIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {11}( 1.3.6.1.4.1.10098.1.1.11.15 NAME 'gotoProfileQuota'
+  DESC 'GOto - save quota for home' EQUALITY caseIgnoreIA5Match SUBSTR caseI
+ gnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {12}( 1.3.6.1.4.1.10098.1.1.11.18 NAME 'gotoHotplugDevice
+ DN' DESC 'GOto - points to hotplug devices' EQUALITY distinguishedNameMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 )
+olcObjectClasses: {0}( 1.3.6.1.4.1.10098.1.2.1.1 NAME 'gotoTerminal' DESC 'G
+ Oto - Gonicus Terminal Concept, objectclass (v2.7)' SUP top AUXILIARY MUST 
+ cn MAY ( description $ macAddress $ ipHostNumber $ gotoShare $ goFonHardwar
+ e ) )
+olcObjectClasses: {1}( 1.3.6.1.4.1.10098.1.2.1.30 NAME 'gotoWorkstation' DES
+ C 'GOto - Gonicus Terminal Concept, objectclass (v2.7)' SUP top AUXILIARY M
+ UST cn MAY ( description $ macAddress $ ipHostNumber $ gotoShare $ goFonHar
+ dware ) )
+olcObjectClasses: {2}( 1.3.6.1.4.1.10098.1.2.1.31 NAME 'gotoPrinter' DESC 'G
+ Oto - Gonicus Terminal Concept, objectclass (v2.7)' SUP top STRUCTURAL MUST
+  cn MAY ( labeledURI $ description $ l $ gotoPrinterPPD $ macAddress $ ipHo
+ stNumber $ gotoUserPrinter $ gotoUserAdminPrinter $ gotoGroupPrinter $ goto
+ GroupAdminPrinter ) )
+olcObjectClasses: {3}( 1.3.6.1.4.1.10098.1.2.1.32 NAME 'gotoEnvironment' DES
+ C 'GOto - contains environment settings (v2.7)' SUP top AUXILIARY MAY ( got
+ oProfileServer $ gotoProfileFlags $ gotoXResolution $ gotoShare $ gotoLogon
+ Script $ gotoKioskProfile $ gotoHotplugDevice $ gotoProfileQuota $ gotoHotp
+ lugDeviceDN ) )
+olcObjectClasses: {4}( 1.3.6.1.4.1.10098.1.2.1.34 NAME 'gotoWorkstationTempl
+ ate' DESC 'GOto - Gonicus Terminal Concept, objectclass (v2.7)' SUP top AUX
+ ILIARY MUST cn MAY ( description $ gotoShare $ goFonHardware $ ghGfxAdapter
+  $ ghNetNic $ ghSoundAdapter $ ghIdeDev $ ghScsiDev $ ghUsbSupport $ ghMemS
+ ize $ ghCpuType $ ghInventoryNumber $ gotoSyslogServer $ gotoNtpServer $ go
+ toSwapServer $ gotoLpdServer $ gotoFontPath $ gotoFilesystem $ gotoFloppyEn
+ able $ gotoCdromEnable $ gotoLpdEnable $ gotoScannerEnable $ gotoScannerCli
+ ents $ gotoRootPasswd $ gotoXdmcpServer $ gotoXMethod $ gotoSndModule $ got
+ oLastUser $ gotoXMonitor $ gotoXHsync $ gotoXVsync $ gotoXResolution $ goto
+ XColordepth $ gotoXMouseport $ gotoXMouseButtons $ gotoMode $ gotoXKbModel 
+ $ gotoXKbLayout $ gotoXKbVariant $ gotoXDriver $ gotoXMouseType $ macAddres
+ s $ gotoAutoFs $ gotoModules $ gotoAdaptPath $ gotoKernelParameters $ gotoB
+ ootKernel $ gotoTerminalPath $ gotoLdapServer $ gotoScannerModel ) )
+olcObjectClasses: {5}( 1.3.6.1.4.1.10098.1.2.1.35 NAME 'gotoTerminalTemplate
+ ' DESC 'GOto - Gonicus Terminal Concept, objectclass (v2.7)' SUP top AUXILI
+ ARY MUST cn MAY ( description $ gotoShare $ goFonHardware $ ghGfxAdapter $ 
+ ghNetNic $ ghSoundAdapter $ ghIdeDev $ ghScsiDev $ ghUsbSupport $ ghMemSize
+  $ ghCpuType $ ghInventoryNumber $ gotoSyslogServer $ gotoNtpServer $ gotoS
+ wapServer $ gotoLpdServer $ gotoFontPath $ gotoFilesystem $ gotoFloppyEnabl
+ e $ gotoCdromEnable $ gotoLpdEnable $ gotoScannerEnable $ gotoScannerClient
+ s $ gotoRootPasswd $ gotoXdmcpServer $ gotoXMethod $ gotoSndModule $ gotoLa
+ stUser $ gotoXMonitor $ gotoXHsync $ gotoXVsync $ gotoXResolution $ gotoXCo
+ lordepth $ gotoXMouseport $ gotoXMouseButtons $ gotoMode $ gotoXKbModel $ g
+ otoXKbLayout $ gotoXKbVariant $ gotoXDriver $ gotoXMouseType $ macAddress $
+  gotoAutoFs $ gotoModules $ gotoAdaptPath $ gotoKernelParameters $ gotoBoot
+ Kernel $ gotoTerminalPath $ gotoLdapServer $ gotoScannerModel ) )
+olcObjectClasses: {6}( 1.3.6.1.4.1.10098.1.2.1.42 NAME 'gotoDevice' DESC 'GO
+ to - contains environment settings (v2.7)' SUP top STRUCTURAL MUST cn MAY (
+  gotoHotplugDevice $ description ) )

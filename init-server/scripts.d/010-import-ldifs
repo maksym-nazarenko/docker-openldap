@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Importing all *.ldif files from $SERVER_INIT_DIR/ldifs.d"
+
+ldifs=$(ls $SERVER_INIT_DIR/ldifs.d/*.ldif)
+if [ ! -z "$ldifs" ]; then
+  for i in $ldifs; do
+    ldapadd -Y EXTERNAL -H ldapi:/// -f  $i
+  done
+fi

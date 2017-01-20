@@ -1,0 +1,39 @@
+#!/bin/bash -e
+
+ldap_creds="-D cn=admin,$SLAPD_DOMAIN_DC_FORMAT -w$SLAPD_PASSWORD"
+ldap_admin_connect_options="-x -H ldap:/// $ldap_creds"
+
+ldapadd="ldapadd $ldap_admin_connect_options"
+ldapmodify="ldapmodify $ldap_admin_connect_options"
+ldapsearch="ldapsearch $ldap_admin_connect_options"
+
+
+cat <<EOF | $ldapadd
+dn: uid=user1,$SLAPD_DOMAIN_DC_FORMAT
+objectClass: account
+objectClass: simpleSecurityObject
+uid: user1
+userPassword: $(slappasswd -n -s "test")
+description: user1
+EOF
+
+cat <<EOF | $ldapadd
+dn: uid=$TEST_USER,$SLAPD_DOMAIN_DC_FORMAT
+objectClass: account
+objectClass: simpleSecurityObject
+uid: $TEST_USER
+userPassword: $TEST_USER_PASSWORD_HASH
+description: test ldap user
+EOF
+
+$ldapsearch -b "$SLAPD_DOMAIN_DC_FORMAT" -x -LLL "(objectClass=*)"
+
+ldapsearch \
+        -H ldap:/// \
+        -b "$SLAPD_DOMAIN_DC_FORMAT" \
+        -D "uid=$TEST_USER,$SLAPD_DOMAIN_DC_FORMAT" \
+        -w "$TEST_USER_PASSWORD" \
+        -x \
+        -LLL \
+        "(objectClass=account)" \
+        uid | grep -q 'uid: user1'

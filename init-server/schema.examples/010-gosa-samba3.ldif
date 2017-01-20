@@ -1,0 +1,251 @@
+dn: cn=gosa-samba3,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: gosa-samba3
+olcAttributeTypes: {0}( 1.3.6.1.4.1.10098.1.1.12.1 NAME 'gosaSubtreeACL' DES
+ C 'GOsa acl entry' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatc
+ h SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.10098.1.1.12.2 NAME 'gosaUser' DESC 'GOs
+ a user' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.
+ 3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.10098.1.1.12.3 NAME 'gosaObject' DESC 'G
+ Osa object' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTA
+ X 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.10098.1.1.12.4 NAME 'gosaMailServer' DES
+ C 'Specify users main mail server' EQUALITY caseIgnoreIA5Match SUBSTR caseI
+ gnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.10098.1.1.12.5 NAME 'gosaMailQuota' DESC
+  'GOsa quota definitions' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5S
+ ubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {5}( 1.3.6.1.4.1.10098.1.1.12.6 NAME 'gosaMailAlternateAd
+ dress' DESC 'Additional mail addresses where the user is reachable' EQUALIT
+ Y caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.26 )
+olcAttributeTypes: {6}( 1.3.6.1.4.1.10098.1.1.12.7 NAME 'gosaMailForwardingA
+ ddress' DESC 'Addresses where to forward mail to' EQUALITY caseIgnoreIA5Mat
+ ch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  )
+olcAttributeTypes: {7}( 1.3.6.1.4.1.10098.1.1.12.8 NAME 'gosaMailMaxSize' DE
+ SC 'Block mails bigger than this value' EQUALITY caseIgnoreIA5Match SUBSTR 
+ caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {8}( 1.3.6.1.4.1.10098.1.1.12.9 NAME 'gosaSpamSortLevel' 
+ DESC 'Spamassassins hits' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5S
+ ubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {9}( 1.3.6.1.4.1.10098.1.1.12.10 NAME 'gosaSpamMailbox' D
+ ESC 'Where to put spam' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5Sub
+ stringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {10}( 1.3.6.1.4.1.10098.1.1.12.11 NAME 'gosaVacationMessa
+ ge' DESC 'Text to display in case of vacation' EQUALITY caseIgnoreMatch SUB
+ STR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {11}( 1.3.6.1.4.1.10098.1.1.12.12 NAME 'gosaMailDeliveryM
+ ode' DESC 'What to do with mails' EQUALITY caseIgnoreIA5Match SUBSTR caseIg
+ noreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {12}( 1.3.6.1.4.1.10098.1.1.12.13 NAME 'gosaDefaultPrinte
+ r' DESC 'Defines a default printer a user owns' EQUALITY caseIgnoreIA5Match
+  SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 S
+ INGLE-VALUE )
+olcAttributeTypes: {13}( 1.3.6.1.4.1.10098.1.1.12.14 NAME 'gosaDefaultLangua
+ ge' DESC 'Defines the default language for a user' EQUALITY caseIgnoreIA5Ma
+ tch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.2
+ 6 SINGLE-VALUE )
+olcAttributeTypes: {14}( 1.3.6.1.4.1.10098.1.1.12.15 NAME 'gosaHostACL' DESC
+  'Defines the places where users can login' EQUALITY caseIgnoreIA5Match SUB
+ STR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {15}( 1.3.6.1.4.1.10098.1.1.12.16 NAME 'gosaService' DESC
+  'Defines services a certain host can provide' EQUALITY caseIgnoreIA5Match 
+ SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {16}( 1.3.6.1.4.1.10098.1.1.12.17 NAME 'gosaProxyID' DESC
+  'Defines the proxy user id used, needed for some filters' EQUALITY caseIgn
+ oreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115
+ .121.1.26 )
+olcAttributeTypes: {17}( 1.3.6.1.4.1.10098.1.1.12.18 NAME 'gosaProxyAcctFlag
+ s' DESC 'Proxy Account Flags' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnore
+ IA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26{16} SINGLE-VALUE )
+olcAttributeTypes: {18}( 1.3.6.1.4.1.10098.1.1.12.19 NAME 'gosaProxyWorkingS
+ tart' DESC 'Specifies the beginning of work in minutes, relative to 00:00' 
+ EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.
+ 6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {19}( 1.3.6.1.4.1.10098.1.1.12.20 NAME 'gosaProxyWorkingS
+ top' DESC 'Specifies the end of work in minutes, relative to 00:00' EQUALIT
+ Y caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.26 )
+olcAttributeTypes: {20}( 1.3.6.1.4.1.10098.1.1.12.21 NAME 'gosaApplicationNa
+ me' DESC 'Specifies the name of an application to be shown up on users desk
+ top' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6
+ .1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {21}( 1.3.6.1.4.1.10098.1.1.12.22 NAME 'gosaApplicationEx
+ ecute' DESC 'Specifies the executable path of an application' EQUALITY case
+ IgnoreMatch SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.15 )
+olcAttributeTypes: {22}( 1.3.6.1.4.1.10098.1.1.12.23 NAME 'gosaApplicationFl
+ ags' DESC 'Specifies the application flags G(roup only), D(esktop), M(enu)'
+  EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {23}( 1.3.6.1.4.1.10098.1.1.12.31 NAME 'gosaApplicationCa
+ tegory' DESC 'Store application parameters' EQUALITY caseIgnoreMatch SUBSTR
+  caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {24}( 1.3.6.1.4.1.10098.1.1.12.24 NAME 'gosaApplicationIc
+ on' DESC 'Keeps the application icon in png format' SYNTAX 1.3.6.1.4.1.1466
+ .115.121.1.28 )
+olcAttributeTypes: {25}( 1.3.6.1.4.1.10098.1.1.12.25 NAME 'gosaSharedFolderT
+ arget' DESC 'Keeps the target of cyrus shared folders' EQUALITY caseIgnoreI
+ A5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.26 )
+olcAttributeTypes: {26}( 1.3.6.1.4.1.10098.1.1.12.26 NAME 'gosaMemberApplica
+ tion' DESC 'Like memberUid, just for applications' EQUALITY caseIgnoreMatch
+  SUBSTR caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {27}( 1.3.6.1.4.1.10098.1.1.12.27 NAME 'gosaApplicationPa
+ rameter' DESC 'Store application parameters' EQUALITY caseIgnoreMatch SUBST
+ R caseIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {28}( 1.3.6.1.4.1.10098.1.1.12.28 NAME 'gosaProxyQuota' D
+ ESC 'Specifies the amount of data a user may surf in a defined period of ti
+ me' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 
+ 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {29}( 1.3.6.1.4.1.10098.1.1.12.29 NAME 'gosaProxyQuotaPer
+ iod' DESC 'Specifies period of time where the counter is been reseted' EQUA
+ LITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.
+ 4.1.1466.115.121.1.26 )
+olcAttributeTypes: {30}( 1.3.6.1.4.1.10098.1.1.12.30 NAME 'gosaGroupObjects'
+  DESC 'Takes a list of all object types that are in a gosaGroupOfNames' EQU
+ ALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {31}( 1.3.6.1.4.1.10098.1.1.12.32 NAME 'gosaApplicationMi
+ meType' DESC 'Takes a list of relevant mime-type|priority settings' EQUALIT
+ Y caseIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {32}( 1.3.6.1.4.1.10098.1.1.12.33 NAME 'gosaUnitTag' DESC
+  'Takes a list of relevant mime-type|priority settings' EQUALITY caseIgnore
+ IA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {33}( 1.3.6.1.4.1.10098.1.1.12.34 NAME 'gosaAclTemplate' 
+ DESC 'Takes ACL entries for gosaRoles' EQUALITY caseIgnoreIA5Match SUBSTR c
+ aseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {34}( 1.3.6.1.4.1.10098.1.1.12.35 NAME 'gosaAclEntry' DES
+ C 'Takes ACL entries for gosaRoles' EQUALITY caseIgnoreIA5Match SUBSTR case
+ IgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {35}( 1.3.6.1.4.1.10098.1.1.12.36 NAME 'gosaSnapshotType'
+  DESC 'Takes either undo or snapshot' EQUALITY caseIgnoreMatch SYNTAX 1.3.6
+ .1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {36}( 1.3.6.1.4.1.10098.1.1.12.37 NAME 'gosaSnapshotTimes
+ tamp' DESC 'Unix timestamp of snapshot' EQUALITY caseIgnoreMatch SUBSTR cas
+ eIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {37}( 1.3.6.1.4.1.10098.1.1.12.38 NAME 'gosaSnapshotDN' D
+ ESC 'Original DN of saved object' EQUALITY caseIgnoreMatch SUBSTR caseIgnor
+ eSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {38}( 1.3.6.1.4.1.10098.1.1.12.39 NAME 'gosaSnapshotData'
+  DESC 'Original DN of saved object' SYNTAX 1.3.6.1.4.1.1466.115.121.1.5 SIN
+ GLE-VALUE )
+olcAttributeTypes: {39}( 1.3.6.1.4.1.10098.1.1.12.40 NAME 'gosaSetting' DESC
+  'Original DN of saved object' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSu
+ bstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {40}( 1.3.6.1.4.1.10098.1.1.12.41 NAME 'gosaVacationStart
+ ' DESC 'Timestamp for enabling current vacation message' SYNTAX 1.3.6.1.4.1
+ .1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {41}( 1.3.6.1.4.1.10098.1.1.12.42 NAME 'gosaVacationStop'
+  DESC 'Timestamp for switching off current vacation message' SYNTAX 1.3.6.1
+ .4.1.1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {42}( 1.3.6.1.4.1.10098.1.1.12.43 NAME 'gosaApplicationPr
+ iority' DESC 'Keeps the application icon in png format' SYNTAX 1.3.6.1.4.1.
+ 1466.115.121.1.15 SINGLE-VALUE )
+olcAttributeTypes: {43}( 1.3.6.1.4.1.10098.1.1.12.44 NAME 'gotoLastSystemLog
+ in' DESC 'Timestamp for a Users last System Login' SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.15 )
+olcAttributeTypes: {44}( 1.3.6.1.4.1.10098.1.1.12.45 NAME 'gotoLastSystem' D
+ ESC 'The DN of the System where the Login was performed' EQUALITY distingui
+ shedNameMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.12 )
+olcAttributeTypes: {45}( 1.3.6.1.4.1.10098.1.1.12.46 NAME 'gosaLoginRestrict
+ ion' DESC 'Multivalue attribute to carry a number of allowed ips/subnets' S
+ UP name )
+olcAttributeTypes: {46}( 1.3.6.1.4.1.10098.1.1.12.47 NAME 'gosaUserDefinedFi
+ lter' DESC 'A user defined filter' SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {47}( 1.3.6.1.4.1.10098.1.1.12.48 NAME 'gosaWebDAVQuota' 
+ DESC 'Webdav share quota in KB' SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE
+ -VALUE )
+olcAttributeTypes: {48}( 1.3.6.1.4.1.10098.1.1.6.2 NAME 'academicTitle' DESC
+  'Field to represent the academic title' EQUALITY caseIgnoreMatch SUBSTR ca
+ seIgnoreSubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {49}( 1.3.6.1.4.1.15305.2.1 NAME ( 'gender' 'sex' ) DESC 
+ 'Gender: M for male, F for female' EQUALITY caseIgnoreIA5Match SYNTAX 1.3.6
+ .1.4.1.1466.115.121.1.26{1} SINGLE-VALUE )
+olcAttributeTypes: {50}( 1.3.6.1.4.1.15305.2.2 NAME ( 'dateOfBirth' 'dob' ) 
+ DESC 'Date of birth in ISO 8601 format' EQUALITY caseIgnoreMatch SYNTAX 1.3
+ .6.1.4.1.1466.115.121.1.15{10} SINGLE-VALUE )
+olcAttributeTypes: {51}( 1.3.6.1.4.1.19414.2.1.651 NAME 'acl' EQUALITY caseI
+ gnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26{256} )
+olcObjectClasses: {0}( 1.3.6.1.4.1.10098.1.2.1.19.1 NAME 'gosaObject' DESC '
+ Class for GOsa settings (v2.7)' SUP top AUXILIARY MUST gosaSubtreeACL )
+olcObjectClasses: {1}( 1.3.6.1.4.1.10098.1.2.1.19.2 NAME 'gosaLockEntry' DES
+ C 'Class for GOsa locking (v2.7)' SUP top STRUCTURAL MUST ( gosaUser $ gosa
+ Object $ cn ) )
+olcObjectClasses: {2}( 1.3.6.1.4.1.10098.1.2.1.19.3 NAME 'gosaCacheEntry' DE
+ SC 'Class for GOsa caching (v2.7)' SUP top STRUCTURAL MUST cn MAY gosaUser 
+ )
+olcObjectClasses: {3}( 1.3.6.1.4.1.10098.1.2.1.19.4 NAME 'gosaDepartment' DE
+ SC 'Class to mark Departments for GOsa (v2.7)' SUP top AUXILIARY MUST ( ou 
+ $ description ) MAY manager )
+olcObjectClasses: {4}( 1.3.6.1.4.1.10098.1.2.1.19.5 NAME 'gosaMailAccount' D
+ ESC 'Class to mark MailAccounts for GOsa (v2.7)' SUP top AUXILIARY MUST ( m
+ ail $ gosaMailServer $ gosaMailDeliveryMode ) MAY ( gosaMailQuota $ gosaMai
+ lAlternateAddress $ gosaMailForwardingAddress $ gosaMailMaxSize $ gosaSpamS
+ ortLevel $ gosaSpamMailbox $ gosaVacationMessage $ gosaVacationStart $ gosa
+ VacationStop $ gosaSharedFolderTarget $ acl ) )
+olcObjectClasses: {5}( 1.3.6.1.4.1.10098.1.2.1.19.6 NAME 'gosaAccount' DESC 
+ 'Class for GOsa Accounts (v2.7)' SUP top AUXILIARY MUST uid MAY ( sambaLMPa
+ ssword $ sambaNTPassword $ sambaPwdLastSet $ gosaDefaultPrinter $ gosaDefau
+ ltLanguage $ academicTitle $ personalTitle $ gosaHostACL $ dateOfBirth $ sa
+ mbaBadPasswordCount $ sambaBadPasswordTime $ gender $ gotoLastSystemLogin $
+  gotoLastSystem $ gosaLoginRestriction ) )
+olcObjectClasses: {6}( 1.3.6.1.4.1.10098.1.2.1.19.7 NAME 'gosaHost' DESC 'Cl
+ ass for GOsa Hosts (v2.7)' SUP top AUXILIARY MUST cn MAY ( description $ go
+ saService ) )
+olcObjectClasses: {7}( 1.3.6.1.4.1.10098.1.2.1.19.8 NAME 'gosaProxyAccount' 
+ DESC 'Class for GOsa Proxy settings (v2.7)' SUP top AUXILIARY MUST gosaProx
+ yAcctFlags MAY ( gosaProxyID $ gosaProxyWorkingStart $ gosaProxyWorkingStop
+  $ gosaProxyQuota $ gosaProxyQuotaPeriod ) )
+olcObjectClasses: {8}( 1.3.6.1.4.1.10098.1.2.1.19.9 NAME 'gosaApplication' D
+ ESC 'Class for GOsa applications (v2.7)' SUP top STRUCTURAL MUST ( cn $ gos
+ aApplicationExecute ) MAY ( gosaApplicationName $ gosaApplicationIcon $ gos
+ aApplicationFlags $ gosaApplicationMimeType $ gosaApplicationParameter $ go
+ toLogonScript $ description $ gosaApplicationCategory ) )
+olcObjectClasses: {9}( 1.3.6.1.4.1.10098.1.2.1.19.10 NAME 'gosaApplicationGr
+ oup' DESC 'Class for GOsa application groups (v2.7)' SUP top AUXILIARY MUST
+  cn MAY ( gosaMemberApplication $ gosaApplicationParameter ) )
+olcObjectClasses: {10}( 1.3.6.1.4.1.10098.1.2.1.19.11 NAME 'gosaUserTemplate
+ ' DESC 'Class for GOsa User Templates (v2.7)' SUP top AUXILIARY MUST cn )
+olcObjectClasses: {11}( 1.3.6.1.4.1.10098.1.2.1.19.12 NAME 'gosaGroupOfNames
+ ' DESC 'GOsa object grouping (v2.7)' SUP top STRUCTURAL MUST ( cn $ gosaGro
+ upObjects ) MAY ( member $ description ) )
+olcObjectClasses: {12}( 1.3.6.1.4.1.10098.1.2.1.19.13 NAME 'gosaWebDAVAccoun
+ t' DESC 'GOsa webdav enabling account (v2.7)' SUP top AUXILIARY MUST ( cn $
+  uid ) MAY gosaWebDAVQuota )
+olcObjectClasses: {13}( 1.3.6.1.4.1.10098.1.2.1.19.14 NAME 'gosaIntranetAcco
+ unt' DESC 'GOsa Inatrent enabling account (v2.7)' SUP top AUXILIARY MUST ( 
+ cn $ uid ) MAY gosaDefaultLanguage )
+olcObjectClasses: {14}( 1.3.6.1.4.1.10098.1.2.1.19.15 NAME 'gosaAdministrati
+ veUnit' DESC 'Marker for administrational units (v2.7)' SUP top AUXILIARY M
+ UST gosaUnitTag )
+olcObjectClasses: {15}( 1.3.6.1.4.1.10098.1.2.1.19.16 NAME 'gosaAdministrati
+ veUnitTag' DESC 'Marker for objects below administrational units (v2.7)' SU
+ P top AUXILIARY MUST gosaUnitTag )
+olcObjectClasses: {16}( 1.3.6.1.4.1.10098.1.2.1.19.17 NAME 'gosaRole' DESC '
+ ACL container to define roles (v2.7)' SUP top STRUCTURAL MUST ( gosaAclTemp
+ late $ cn ) MAY description )
+olcObjectClasses: {17}( 1.3.6.1.4.1.10098.1.2.1.19.18 NAME 'gosaAcl' DESC 'A
+ CL container to define single ACLs (v2.7)' SUP top AUXILIARY MUST gosaAclEn
+ try )
+olcObjectClasses: {18}( 1.3.6.1.4.1.10098.1.2.1.19.19 NAME 'gosaSnapshotObje
+ ct' DESC 'Container object for undo and snapshot data (v2.7)' SUP top STRUC
+ TURAL MUST ( gosaSnapshotType $ gosaSnapshotTimestamp $ gosaSnapshotDN $ go
+ saSnapshotData ) MAY description )
+olcObjectClasses: {19}( 1.3.6.1.4.1.10098.1.2.1.19.20 NAME 'gosaConfig' DESC
+  'Settings for gosa. Replaces parts of the gosa.conf. (v2.7)' SUP top STRUC
+ TURAL MUST cn MAY gosaSetting )
+olcObjectClasses: {20}( 1.3.6.1.4.1.10098.1.2.1.43 NAME 'gotoSubmenuEntry' D
+ ESC 'GOto - contains environment settings (v2.7)' SUP top STRUCTURAL MUST c
+ n MAY ( gosaApplicationIcon $ gosaApplicationPriority ) )
+olcObjectClasses: {21}( 1.3.6.1.4.1.10098.1.2.1.44 NAME 'gotoMenuEntry' DESC
+  'GOto - defines a menu entry (v2.7)' SUP top STRUCTURAL MUST cn MAY ( gosa
+ ApplicationParameter $ gosaApplicationPriority ) )
+olcObjectClasses: {22}( 1.3.6.1.4.1.10098.1.2.1.19.21 NAME 'gosaProperties' 
+ DESC 'Store GOsa properties (v2.7)' SUP top AUXILIARY MAY gosaUserDefinedFi
+ lter )

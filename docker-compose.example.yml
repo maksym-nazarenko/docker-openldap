@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  ldap:
+    container_name: openldap
+    build: .
+    restart: "unless-stopped"
+    network_mode: bridge
+    volumes:
+      - ./data/db:/var/lib/openldap/openldap-data
+      - ./data/slapd.d:/etc/openldap/slapd.d
+      - ./init-server:/init-server:ro
+    ports:
+      - "389:389"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50M"
+        max-file: "5"
+    environment:
+      SLAPD_PASSWORD: pass
+      SLAPD_DOMAIN: domain.local
+      SLAPD_ORGANIZATION: Org

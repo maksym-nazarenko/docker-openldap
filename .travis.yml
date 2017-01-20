@@ -1,0 +1,51 @@
+language: python
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+  - master
+
+env:
+  - SLAPD_PASSWORD='pass'
+      SLAPD_DOMAIN='domain.local'
+      SLAPD_ORGANIZATION='My Org, Inc.'
+# Install ansible
+addons:
+  apt:
+    packages:
+    - ldap-utils
+    - slapd
+
+before_install:
+  - rm -Rf init-server/schema data/ldifs.d
+  - cp -a init-server/schema.examples init-server/ldifs.d
+
+install:
+  - docker build -t openldap .
+
+before_script:
+  - sudo service slapd stop
+  - sudo rm -Rf ${TRAVIS_BUILD_DIR}/data
+
+script:
+  # Basic role syntax check
+  - docker run
+      -d
+      --name openldap
+      -p 127.0.0.1:389:389
+      -v ${TRAVIS_BUILD_DIR}/data/slapd.d:/etc/openldap/slapd.d
+      -v ${TRAVIS_BUILD_DIR}/data/ldap_db:/var/lib/openldap/openldap-data
+      -v ${TRAVIS_BUILD_DIR}/init-server:/init-server:ro
+      -e SLAPD_PASSWORD
+      -e SLAPD_DOMAIN
+      -e SLAPD_ORGANIZATION
+      openldap -u ldap -g ldap -F /etc/openldap/slapd.d -h "ldapi:/// ldap:///" -d stats
+  - sleep 10
+  - docker logs openldap
+  - ${TRAVIS_BUILD_DIR}/tests/run-all.sh
+after_script:
+  - docker rm -f openldap
+  - sudo rm -Rf ${TRAVIS_BUILD_DIR}/data

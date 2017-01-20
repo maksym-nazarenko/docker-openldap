@@ -1,0 +1,200 @@
+dn: cn=gosystem,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: gosystem
+olcAttributeTypes: {0}( 1.3.6.1.4.1.10098.1.1.1.1 NAME 'gotoSyslogServer' DE
+ SC 'GOto - Gonicus Terminal Concept, value syslogServer.' EQUALITY caseIgno
+ reIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {1}( 1.3.6.1.4.1.10098.1.1.1.2 NAME 'gotoNtpServer' DESC 
+ 'GOto - Gonicus Terminal Concept, value ntpServer.' EQUALITY caseIgnoreIA5M
+ atch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 )
+olcAttributeTypes: {2}( 1.3.6.1.4.1.10098.1.1.1.3 NAME 'gotoSwapServer' DESC
+  'GOto - Gonicus Terminal Concept, value swapServer.' EQUALITY caseIgnoreIA
+ 5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 SINGLE-VALUE )
+olcAttributeTypes: {3}( 1.3.6.1.4.1.10098.1.1.1.4 NAME 'gotoLpdServer' DESC 
+ 'GOto - Gonicus Terminal Concept, value lpdServer.' EQUALITY caseIgnoreIA5M
+ atch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {4}( 1.3.6.1.4.1.10098.1.1.1.5 NAME 'gotoFontPath' DESC '
+ GOto - Gonicus Terminal Concept, value fontPath.' EQUALITY caseIgnoreIA5Mat
+ ch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  SINGLE-VALUE )
+olcAttributeTypes: {5}( 1.3.6.1.4.1.10098.1.1.1.6 NAME 'gotoFilesystem' DESC
+  'GOto - Gonicus Terminal Concept, value filesystem.' EQUALITY caseIgnoreIA
+ 5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 )
+olcAttributeTypes: {6}( 1.3.6.1.4.1.10098.1.1.1.7 NAME 'gotoFloppyEnable' DE
+ SC 'GOto - Gonicus Terminal Concept, value floppyEnable.' EQUALITY caseIgno
+ reIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {7}( 1.3.6.1.4.1.10098.1.1.1.8 NAME 'gotoCdromEnable' DES
+ C 'GOto - Gonicus Terminal Concept, value cdromEnable.' EQUALITY caseIgnore
+ IA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {8}( 1.3.6.1.4.1.10098.1.1.1.9 NAME 'gotoLpdEnable' DESC 
+ 'GOto - Gonicus Terminal Concept, value lpdEnable.' EQUALITY caseIgnoreIA5M
+ atch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 )
+olcAttributeTypes: {9}( 1.3.6.1.4.1.10098.1.1.1.10 NAME 'gotoScannerEnable' 
+ DESC 'GOto - Gonicus Terminal Concept, value scannerEnable.' EQUALITY caseI
+ gnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.1
+ 15.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {10}( 1.3.6.1.4.1.10098.1.1.1.11 NAME 'gotoScannerClients
+ ' DESC 'GOto - Gonicus Terminal Concept, value scannerClients.' EQUALITY ca
+ seIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {11}( 1.3.6.1.4.1.10098.1.1.1.14 NAME 'gotoRootPasswd' DE
+ SC 'GOto - Gonicus Terminal Concept, value rootPasswd.' EQUALITY caseIgnore
+ IA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {12}( 1.3.6.1.4.1.10098.1.1.1.15 NAME 'gotoXdmcpServer' D
+ ESC 'GOto - Gonicus Terminal Concept, value xdmcpServer.' EQUALITY caseIgno
+ reIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {13}( 1.3.6.1.4.1.10098.1.1.1.16 NAME 'gotoXMethod' DESC 
+ 'GOto - Gonicus Terminal Concept, value xMethod.' EQUALITY caseIgnoreIA5Mat
+ ch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  SINGLE-VALUE )
+olcAttributeTypes: {14}( 1.3.6.1.4.1.10098.1.1.1.17 NAME 'gotoXMonitor' DESC
+  'GOto - Gonicus Terminal Concept, value xMonitor.' EQUALITY caseIgnoreIA5M
+ atch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {15}( 1.3.6.1.4.1.10098.1.1.1.18 NAME 'gotoXHsync' DESC '
+ GOto - Gonicus Terminal Concept, value xHsync.' EQUALITY caseIgnoreIA5Match
+  SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 S
+ INGLE-VALUE )
+olcAttributeTypes: {16}( 1.3.6.1.4.1.10098.1.1.1.19 NAME 'gotoXVsync' DESC '
+ GOto - Gonicus Terminal Concept, value xVsync.' EQUALITY caseIgnoreIA5Match
+  SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 S
+ INGLE-VALUE )
+olcAttributeTypes: {17}( 1.3.6.1.4.1.10098.1.1.1.20 NAME 'gotoXResolution' D
+ ESC 'GOto - Gonicus Terminal Concept, value xResolution.' EQUALITY caseIgno
+ reIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {18}( 1.3.6.1.4.1.10098.1.1.1.21 NAME 'gotoXColordepth' D
+ ESC 'GOto - Gonicus Terminal Concept, value xColordepth.' EQUALITY caseIgno
+ reIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.
+ 121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {19}( 1.3.6.1.4.1.10098.1.1.1.22 NAME 'gotoXMouseport' DE
+ SC 'GOto - Gonicus Terminal Concept, value xMouseport.' EQUALITY caseIgnore
+ IA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {20}( 1.3.6.1.4.1.10098.1.1.1.23 NAME 'gotoXMouseButtons'
+  DESC 'GOto - Gonicus Terminal Concept, value xMouseButtons.' EQUALITY case
+ IgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.
+ 115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {21}( 1.3.6.1.4.1.10098.1.1.1.24 NAME 'gotoMode' DESC 'GO
+ to - Gonicus Terminal Concept, Terminal is active.' EQUALITY caseIgnoreIA5M
+ atch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {22}( 1.3.6.1.4.1.10098.1.1.1.25 NAME 'gotoXKbModel' DESC
+  'GOto - Gonicus Terminal Concept, value xKbmodel.' EQUALITY caseIgnoreIA5M
+ atch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {23}( 1.3.6.1.4.1.10098.1.1.1.26 NAME 'gotoXKbLayout' DES
+ C 'GOto - Gonicus Terminal Concept, value xKblayout.' EQUALITY caseIgnoreIA
+ 5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 SINGLE-VALUE )
+olcAttributeTypes: {24}( 1.3.6.1.4.1.10098.1.1.1.27 NAME 'gotoXKbVariant' DE
+ SC 'GOto - Gonicus Terminal Concept, value xKbvariant.' EQUALITY caseIgnore
+ IA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.12
+ 1.1.26 SINGLE-VALUE )
+olcAttributeTypes: {25}( 1.3.6.1.4.1.10098.1.1.1.28 NAME 'gotoXDriver' DESC 
+ 'GOto - Gonicus Terminal Concept, value xDriver.' EQUALITY caseIgnoreIA5Mat
+ ch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  SINGLE-VALUE )
+olcAttributeTypes: {26}( 1.3.6.1.4.1.10098.1.1.1.29 NAME 'gotoSndModule' DES
+ C 'GOto - Gonicus Terminal Concept, value sndModules.' EQUALITY caseIgnoreI
+ A5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121
+ .1.26 SINGLE-VALUE )
+olcAttributeTypes: {27}( 1.3.6.1.4.1.10098.1.1.1.30 NAME 'gotoLastUser' DESC
+  'GOto - Gonicus Terminal Concept, value lastUser.' EQUALITY caseIgnoreIA5M
+ atch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.
+ 26 SINGLE-VALUE )
+olcAttributeTypes: {28}( 1.3.6.1.4.1.10098.1.1.1.31 NAME 'gotoAutoFs' DESC '
+ GOto - Gonicus Terminal Concept, value autofs.' EQUALITY caseIgnoreIA5Match
+  SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {29}( 1.3.6.1.4.1.10098.1.1.1.32 NAME 'gotoModules' DESC 
+ 'GOto - Gonicus Terminal Concept, value modules.' EQUALITY caseIgnoreIA5Mat
+ ch SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26
+  )
+olcAttributeTypes: {30}( 1.3.6.1.4.1.10098.1.1.1.33 NAME 'gotoAdaptPath' DES
+ C 'GOto - Gonicus Terminal Concept, value adaptpath.' EQUALITY caseIgnoreIA
+ 5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.
+ 1.26 )
+olcAttributeTypes: {31}( 1.3.6.1.4.1.10098.1.1.1.34 NAME 'gotoXMouseType' DE
+ SC 'Hardware definitions, value Maustyp' EQUALITY caseIgnoreIA5Match SUBSTR
+  caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-V
+ ALUE )
+olcAttributeTypes: {32}( 1.3.6.1.4.1.10098.1.1.1.35 NAME 'gotoKernelParamete
+ rs' DESC 'Kernel boot parameters' EQUALITY caseIgnoreIA5Match SUBSTR caseIg
+ noreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {33}( 1.3.6.1.4.1.10098.1.1.1.36 NAME 'gotoBootKernel' DE
+ SC 'Kernel boot parameters' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnoreIA
+ 5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {34}( 1.3.6.1.4.1.10098.1.1.1.37 NAME 'gotoTerminalPath' 
+ DESC 'Kernel boot parameters' EQUALITY caseIgnoreIA5Match SUBSTR caseIgnore
+ IA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {35}( 1.3.6.1.4.1.10098.1.1.1.38 NAME 'gotoLdapServer' DE
+ SC 'Kernel boot parameters' EQUALITY caseIgnoreMatch SUBSTR caseIgnoreSubst
+ ringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+olcAttributeTypes: {36}( 1.3.6.1.4.1.10098.1.1.1.39 NAME 'gotoScannerBackend
+ ' DESC 'GOto - Gonicus Terminal Concept, value scannerBackend.' EQUALITY ca
+ seIgnoreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.146
+ 6.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {37}( 1.3.6.1.4.1.10098.1.1.1.40 NAME 'gotoScannerModel' 
+ DESC 'GOto - Gonicus Terminal Concept, value scannerModel.' EQUALITY caseIg
+ noreIA5Match SUBSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.11
+ 5.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {38}( 1.3.6.1.4.1.10098.1.1.2.1 NAME 'ghCpuType' DESC 'Ha
+ rdware definitions, value cpuType' EQUALITY caseIgnoreIA5Match SUBSTR caseI
+ gnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {39}( 1.3.6.1.4.1.10098.1.1.2.2 NAME 'ghMemSize' DESC 'Ha
+ rdware definitions, value memSize' EQUALITY caseIgnoreIA5Match SUBSTR caseI
+ gnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {40}( 1.3.6.1.4.1.10098.1.1.2.3 NAME 'ghUsbSupport' DESC 
+ 'Hardware definitions, value usbSupport' EQUALITY caseIgnoreIA5Match SUBSTR
+  caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-V
+ ALUE )
+olcAttributeTypes: {41}( 1.3.6.1.4.1.10098.1.1.2.4 NAME 'ghIdeDev' DESC 'Har
+ dware definitions, value ideDev' EQUALITY caseIgnoreIA5Match SUBSTR caseIgn
+ oreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {42}( 1.3.6.1.4.1.10098.1.1.2.5 NAME 'ghScsiDev' DESC 'Ha
+ rdware definitions, value scsiDev' EQUALITY caseIgnoreIA5Match SUBSTR caseI
+ gnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {43}( 1.3.6.1.4.1.10098.1.1.2.7 NAME 'ghSoundAdapter' DES
+ C 'Hardware definitions, value soundAdapter' EQUALITY caseIgnoreIA5Match SU
+ BSTR caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SING
+ LE-VALUE )
+olcAttributeTypes: {44}( 1.3.6.1.4.1.10098.1.1.2.8 NAME 'ghNetNic' DESC 'Har
+ dware definitions, value Network Device' EQUALITY caseIgnoreIA5Match SUBSTR
+  caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 )
+olcAttributeTypes: {45}( 1.3.6.1.4.1.10098.1.1.2.9 NAME 'ghGfxAdapter' DESC 
+ 'Hardware definitions, value Grafikkarte' EQUALITY caseIgnoreIA5Match SUBST
+ R caseIgnoreIA5SubstringsMatch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-
+ VALUE )
+olcAttributeTypes: {46}( 1.3.6.1.4.1.10098.1.1.2.10 NAME 'ghInventoryNumber'
+  DESC 'Unique number for inclusion in an inventory' EQUALITY caseIgnoreIA5M
+ atch SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {47}( 1.3.6.1.4.1.10098.1.1.2.11 NAME 'gotoSysStatus' DES
+ C 'Keeps current system status - info shown in GOsa' EQUALITY caseIgnoreIA5
+ Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcAttributeTypes: {48}( 1.3.6.1.4.1.10098.1.1.2.12 NAME 'gotoHardwareChecks
+ um' DESC 'GOto - quick way to see if something has changed' EQUALITY caseIg
+ noreIA5Match SYNTAX 1.3.6.1.4.1.1466.115.121.1.26 SINGLE-VALUE )
+olcObjectClasses: {0}( 1.3.6.1.4.1.10098.1.2.1.3 NAME 'GOhard' DESC 'Gonicus
+  Hardware definitions, objectclass (v2.7)' SUP top STRUCTURAL MUST cn MAY (
+  ghGfxAdapter $ ghNetNic $ ghSoundAdapter $ ghIdeDev $ ghScsiDev $ macAddre
+ ss $ ghUsbSupport $ ghMemSize $ ghCpuType $ ghInventoryNumber $ gotoSyslogS
+ erver $ gotoNtpServer $ gotoSwapServer $ gotoLpdServer $ gotoFontPath $ got
+ oFilesystem $ gotoFloppyEnable $ gotoCdromEnable $ gotoLpdEnable $ gotoScan
+ nerEnable $ gotoScannerClients $ gotoRootPasswd $ gotoXdmcpServer $ gotoXMe
+ thod $ gotoSndModule $ gotoLastUser $ gotoXMonitor $ gotoXHsync $ gotoXVsyn
+ c $ gotoXResolution $ gotoXColordepth $ gotoXMouseport $ gotoXMouseButtons 
+ $ gotoMode $ gotoXKbModel $ gotoXKbLayout $ gotoXKbVariant $ gotoXDriver $ 
+ gotoXMouseType $ macAddress $ gotoAutoFs $ gotoModules $ gotoAdaptPath $ go
+ toKernelParameters $ gotoBootKernel $ gotoTerminalPath $ gotoLdapServer $ g
+ otoScannerModel $ ipHostNumber $ l $ gotoSysStatus $ description $ gotoHard
+ wareChecksum ) )
